@@ -41,8 +41,7 @@ loginForm.addEventListener('submit', (e) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log('logged in', user);
+    .then(() => {
       loginForm.reset();
     })
     .catch((err) => {
@@ -52,10 +51,7 @@ loginForm.addEventListener('submit', (e) => {
 
 // sign out
 signOut.addEventListener('click', () => {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => console.log('signed out'));
+  firebase.auth().signOut();
 });
 
 // auth listener
