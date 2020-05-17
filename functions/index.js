@@ -32,7 +32,7 @@ exports.addRequest = functions.https.onCall((data, context) => {
       'request must be no more than 30 characters long'
     );
   }
-  return admin.firestore().collection('requests').add({
+  admin.firestore().collection('requests').add({
     text: data.text,
     upvotes: 0,
   });
