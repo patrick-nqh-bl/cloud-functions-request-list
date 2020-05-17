@@ -1,4 +1,4 @@
-# Patrick's Project (using Firebase & Cloud Functions)
+# Patrick's Project (using Firebase & Cloud Functions, Vue.js)
 
 1. Re-code by me
 
