@@ -1,5 +1,3 @@
-import { firebaseConfig } from 'firebase-functions';
-
 const authSwitchLinks = document.querySelectorAll('.switch');
 const authModals = document.querySelectorAll('.auth .modal');
 const authWrapper = document.querySelector('.auth');
@@ -30,5 +28,24 @@ registerForm.addEventListener('submit', (e) => {
     })
     .catch((err) => {
       registerForm.querySelector('.error').textContent = err.message;
+    });
+});
+
+// login form
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const email = loginForm.email.value;
+  const password = loginForm.password.value;
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log('logged in', user);
+      loginForm.reset();
+    })
+    .catch((err) => {
+      loginForm.querySelector('.error').textContent = err.message;
     });
 });
