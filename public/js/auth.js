@@ -23,7 +23,6 @@ registerForm.addEventListener('submit', (e) => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then((user) => {
-      console.log('registered', user);
       registerForm.reset();
     })
     .catch((err) => {
